@@ -62,7 +62,7 @@ std::cout << "ciao" << std::endl; // newline + flush
 std::cout << "inserisci il nome: " << std::flush;
 ```
 
-* Quando usare std::endl e quando '\n'
+**Quando usare std::endl e quando '\n'**
 std::endl = a capo + flush: utile quando devi vedere il testo subito (per esempio un prompt prima di leggere da tastiera).
 '\n' = solo a capo: più veloce in generale, perché non forza il flush ogni volta.
 
@@ -73,7 +73,7 @@ In C++ i nomi vengono organizzati in namespace per evitare scontri di nomi tra l
 ### Che cos’è ::?
 → :: è l’operatore di risoluzione di ambito: significa “vai dentro quella scatola e prendi questo nome”.
 
-* Quindi:
+**Quindi:**
 - std::cout = “la cout della scatola std”.
 - std::string = “la string della scatola std”.
 - std::toupper = “la toupper di std”.
@@ -92,7 +92,7 @@ In C++ esiste using namespace std; per evitare di scrivere std:: ovunque, ma nel
 - OOP = organizzi il programma come oggetti (dati + funzioni insieme).
 - C++ spinge l’OOP perché ti dà classi, costruttori, distruttori, public/private, operatori, ecc.
 
-* OOP in 3 frasi
+**OOP in 3 frasi**
 → Classe = stampo/ricetta.
 → Oggetto = istanza reale di quella ricetta.
 → Incapsulamento = i dettagli restano privati, esponi solo ciò che serve (pubblico).
@@ -108,7 +108,7 @@ codice più leggibile, meno bug, manutenzione facile.
 
 ### Le 4 idee chiave
 
-* → Incapsulamento – nascondi i dettagli:
+**→ Incapsulamento – nascondi i dettagli:**
 
 ```
 class Contact {
@@ -120,9 +120,9 @@ private:
 };
 ```
 
-* → Astrazione – usi l’oggetto senza sapere il “motore” sotto.
+**→ Astrazione – usi l’oggetto senza sapere il “motore” sotto.**
 
-* → Costruzione/Distruzione – oggetti sempre in stato valido: 
+**→ Costruzione/Distruzione – oggetti sempre in stato valido:**
 ```
 class File {
 public:
@@ -130,13 +130,13 @@ public:
   ~File();                         // chiude
 };
 ```
-* → Ereditarietà/Polimorfismo – verranno dopo;
+**→ Ereditarietà/Polimorfismo – verranno dopo;**
 
 # Schema mentale per scrivere una classe
-* → Nome e file:
+**→ Nome e file:**
     - Contact.hpp, Contact.cpp.
 
-* → Header (.hpp) = interfaccia
+**→ Header (.hpp) = interfaccia**
 ```
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
@@ -156,7 +156,7 @@ private:
 #endif
 ```
 
-* → Source (.cpp) = implementazione
+→ **Source (.cpp) = implementazione**
 ```
 #include "Contact.hpp"
 
