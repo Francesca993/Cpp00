@@ -87,6 +87,86 @@ Nota: non è una chiamata, non ha costo a runtime. È solo un’informazione in 
 E se mi scoccia scriverlo?
 In C++ esiste using namespace std; per evitare di scrivere std:: ovunque, ma nel modulo 42 è vietato (–42). Potresti tecnicamente fare singole “using-declaration” tipo using std::cout; in ambito locale, ma per restare al 100% dentro lo spirito e le regole del subject, meglio non usarle e qualificare sempre con std::.
 
+# Perché C++ è orientato agli oggetti
+
+- OOP = organizzi il programma come oggetti (dati + funzioni insieme).
+- C++ spinge l’OOP perché ti dà classi, costruttori, distruttori, public/private, operatori, ecc.
+
+* OOP in 3 frasi
+→ Classe = stampo/ricetta.
+→ Oggetto = istanza reale di quella ricetta.
+→ Incapsulamento = i dettagli restano privati, esponi solo ciò che serve (pubblico).
+In C tenevamo “struct + funzioni” separati. In C++ li mettiamo insieme dentro la classe: più ordine, meno errori.
+
+- Classi + metodi: tieni vicini dati e azioni.
+- public / private / const: controllo fine su cosa si può toccare.
+- Costruttori/distruttori: stato valido alla nascita, pulizia alla fine.
+- Operatori (es. operator<<) per API naturali.
+- Namespace (std::): eviti collisioni di nomi.
+- RAII: le risorse si gestiscono “agganciate alla vita” dell’oggetto.
+codice più leggibile, meno bug, manutenzione facile.
+
+### Le 4 idee chiave
+
+* → Incapsulamento – nascondi i dettagli:
+
+```
+class Contact {
+public:
+  void setPhone(const std::string& p) { _phone = p; }
+  std::string phone() const { return _phone; }
+private:
+  std::string _phone;
+};
+```
+
+* → Astrazione – usi l’oggetto senza sapere il “motore” sotto.
+
+* → Costruzione/Distruzione – oggetti sempre in stato valido: 
+```
+class File {
+public:
+  File(const std::string& path);  // apre
+  ~File();                         // chiude
+};
+```
+* → Ereditarietà/Polimorfismo – verranno dopo;
+
+# Schema mentale per scrivere una classe
+* → Nome e file:
+    - Contact.hpp, Contact.cpp.
+
+* → Header (.hpp) = interfaccia
+```
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
+
+#include <string>
+
+class Contact {
+public:
+  Contact();                          // opzionale: inizializza a vuoto
+  void setName(const std::string& n);
+  std::string name() const;
+
+private:
+  std::string _name;                  // dettagli nascosti
+};
+
+#endif
+```
+
+* → Source (.cpp) = implementazione
+```
+#include "Contact.hpp"
+
+Contact::Contact() : _name() {}
+
+void Contact::setName(const std::string& n) { _name = n; }
+std::string Contact::name() const { return _name; }
+```
+
+
 ```
 
 ```
