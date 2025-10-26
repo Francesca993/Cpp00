@@ -6,31 +6,36 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:19:17 by francesca         #+#    #+#             */
-/*   Updated: 2025/10/26 17:56:42 by francesca        ###   ########.fr       */
+/*   Updated: 2025/10/26 21:32:49 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-# include <string>
-# include <iostream>
-# include "Contact.hpp"
+#include "Contact.hpp"
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <cctype>
+#include <sstream>   // <-- NECESSARIO per std::istringstream
 
 class PhoneBook
 {
     private:
     int contactsCount;
+    Contact contacts[8];
     
     public:
-    Contact contacts[8];
     PhoneBook();
         ~PhoneBook();
     
     void addContact();
-    void displayCount() const;
-    void displayContacts() const;
-    void displayContact(int index) const;
+    int  displayCount() const;
+    void printTable() const;
+    void searchContact(int index) const;
+    void searchContacts() const;
+    static std::string formatColumn(const std::string& value);
 };
 
 #endif

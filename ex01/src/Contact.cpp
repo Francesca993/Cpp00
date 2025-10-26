@@ -6,7 +6,7 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 14:46:10 by francesca         #+#    #+#             */
-/*   Updated: 2025/10/26 18:55:03 by francesca        ###   ########.fr       */
+/*   Updated: 2025/10/26 21:23:25 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,28 +24,20 @@ Contact::Contact()
 Contact::~Contact() 
 {}
 
-bool Contact::isValid() const {
-    return !firstName.empty()
-        && !lastName.empty()
-        && !nickName.empty()
-        && !phoneNumber.empty()
-        && !darkestSecret.empty();
-}
-
 /*
 // Ritorna true se s è vuota OPPURE composta solo da whitespace
 */
-static bool is_all_space(const std::string& s) 
+static bool isAllSpaces(const std::string& s) 
 {
     if (s.empty()) 
-    return true; // evita vuoto
+    return (true); // evita vuoto
      for (std::string::size_type i = 0; i < s.size(); ++i)
     {
         unsigned char uc = static_cast<unsigned char>(s[i]);
         if (!std::isspace(uc)) 
             return (false);
     }
-    return true;
+    return (true);
 }
 
 static std::string readInfo(std::string type)
@@ -55,7 +47,7 @@ static std::string readInfo(std::string type)
     {
         std::cout << "Insert the " << type << ":" << std::endl;
         std::getline(std::cin, input);
-        if (!is_all_space(input))
+        if (!isAllSpaces(input))
 			break ;
 		std::cout << "The " << type << " cannot be empty or only spaces." << std::endl;
     }
@@ -63,7 +55,7 @@ static std::string readInfo(std::string type)
 }
 
 // Ritorna true se s è non-vuota E tutte cifre
-static bool is_all_digits(const std::string& s) 
+static bool isAllDigits(const std::string& s) 
 {
      if (s.empty()) 
         return (false);
@@ -72,7 +64,7 @@ static bool is_all_digits(const std::string& s)
         unsigned char uc = static_cast<unsigned char>(s[i]);
         if (!std::isdigit(uc)) return false;
     }
-    return true;
+    return (true);
 }
 
 static std::string readNumber(std::string type)
@@ -82,14 +74,13 @@ static std::string readNumber(std::string type)
     {
         std::cout << "Insert the " << type << ":" << std::endl;
         std::getline(std::cin, input);
-        if (is_all_digits(input))
+        if (isAllDigits(input))
 			break ;
         std::cout << "The " << type << " must contain digits only and cannot be empty." << std::endl;
 	}
     return (input);
 }
 
-//std::cout << "tou push add" << std::endl;
 void Contact::addContact()
 {
     this->firstName = readInfo("First Name");
@@ -99,11 +90,11 @@ void Contact::addContact()
     this->darkestSecret = readInfo("darkest Secret");
     
     // Debug
-    std::cout << this->firstName << std::endl;
-    std::cout << this->lastName << std::endl;
-    std::cout << this->phoneNumber << std::endl;
-    std::cout << this->nickName << std::endl;
-    std::cout << this->darkestSecret << std::endl;
+    // std::cout << this->firstName << std::endl;
+    // std::cout << this->lastName << std::endl;
+    // std::cout << this->phoneNumber << std::endl;
+    // std::cout << this->nickName << std::endl;
+    // std::cout << this->darkestSecret << std::endl;
     std::cout << "Contact create!" << std::endl;
 }
 
