@@ -6,12 +6,13 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 14:30:53 by francesca         #+#    #+#             */
-/*   Updated: 2025/10/26 15:14:32 by francesca        ###   ########.fr       */
+/*   Updated: 2025/10/26 17:59:39 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cctype>
+#include "PhoneBook.hpp"
 
 int main()
 {
@@ -33,7 +34,7 @@ int main()
 			command[i] = std::toupper(command[i]);
         if (command == "ADD")
         {
-            std::cout << "tou push add" << std::endl;
+            PhoneBook.addContact();
         }
         else if (command == "SEARCH")
         {

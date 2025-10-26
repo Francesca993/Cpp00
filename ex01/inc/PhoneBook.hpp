@@ -6,12 +6,12 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:19:17 by francesca         #+#    #+#             */
-/*   Updated: 2025/10/26 14:46:15 by francesca        ###   ########.fr       */
+/*   Updated: 2025/10/26 17:56:42 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
 # include <string>
 # include <iostream>
@@ -20,10 +20,10 @@
 class PhoneBook
 {
     private:
-    Contact contacts[8];
     int contactsCount;
-
+    
     public:
+    Contact contacts[8];
     PhoneBook();
         ~PhoneBook();
     
