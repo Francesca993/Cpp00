@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/25 10:54:24 by francesca         #+#    #+#             */
-/*   Updated: 2025/10/26 13:59:48 by francesca        ###   ########.fr       */
+/*   Created: 2025/10/25 14:46:10 by francesca         #+#    #+#             */
+/*   Updated: 2025/10/26 13:53:59 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cctype>
+#include "Contact.hpp"
 
-
-int main(int argc, char **argv)
+Contact::~Contact()
 {
-    if (argc == 1)
-    {
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl; 
-    }
-    for (int i = 1; i < argc; i++)
-    {
-        for (int j = 0; argv[i][j]; j++)
-        {
-            std::cout << (char)toupper(argv[i][j]);
-        }
-        std::cout << std::endl;
-    }
-    return (0);
+    this->firstName = "";
+    this->lastName = "";
+    this->nickName = "";
+    this->phoneNumber = "";
+    this->darkestSecret = "";
+}
+
+Contact::~Contact() 
+{}
+
+bool Contact::isValid() const {
+    return !firstName.empty()
+        && !lastName.empty()
+        && !prefPet.empty()
+        && !phoneNumber.empty()
+        && !prefColor.empty();
 }
