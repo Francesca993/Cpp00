@@ -6,7 +6,7 @@
 #    By: francesca <francesca@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/25 10:53:11 by francesca         #+#    #+#              #
-#    Updated: 2025/10/26 17:26:14 by francesca        ###   ########.fr        #
+#    Updated: 2025/10/26 21:46:58 by francesca        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,8 +56,12 @@ $(OBJS_DIR)%.o:	$(SRCS_DIR)%.cpp | $(OBJS_DIR)
 
 # Link object files to create the executable
 $(NAME):		$(OBJS_DIR) $(OBJS)
-				@echo "$(GREEN)Linking objects and creating $(NAME)...$(RESET)"
+				@echo "$(GREEN)Linking objects and creating $(NAME)...\n$(RESET)"
 				@$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+				@echo "$(GREEN) ██████   ██████   ██████    █████    █████ "
+				@echo "$(GREEN) ██       ██  ██   ██  ██   ██  ██   ██  ██ "
+				@echo "$(GREEN) ██       ██████   ██████   ██  ██   ██  ██ "
+				@echo "$(GREEN) ██████   ██       ██        █████    █████ \n$(RESET)"
 
 # Clean object files
 clean:
