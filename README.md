@@ -402,6 +402,31 @@ const std::string& getFirstName() const; // 'const' qui = non tocca i membri
 # Exercise 01: My Awesome PhoneBook
 **Programma stile “rubrica anni ’80” con 3 comandi: ADD, SEARCH, EXIT. All’avvio la rubrica è vuota.**
 
+### Schema visivo
+```
+┌────────────────────────────────────────────────┐
+│             Start programma                    │   
+└────────────────────────────────────────────────┘
+                │
+                ▼
+Prompt: "Enter command (ADD, SEARCH, EXIT):"
+                │
+       ┌────────┼─────────┬───────────┐
+       ▼                  ▼           ▼
+    ADD                 SEARCH        EXIT
+    │                      │            │
+    ▼                      ▼            ▼
+[Gestisci ADD]      [Gestisci SEARCH]   Termina
+    │                  │
+    └──────────┬───────┘
+               ▼
+        Torna al prompt
+
+Qualsiasi altro input: "ignored" (opzionale: messaggio tipo
+"Invalid command"), poi si ritorna al prompt.
+
+```
+
 * Due classi:
     - PhoneBook → array di contatti, max 8. Se aggiungi il 9° → sovrascrivi il più vecchio (buffer circolare). Niente allocazione dinamica.
     - Contact → rappresenta un contatto. Campi: first name, last name, nickname, phone number, darkest secret (tutti non vuoti).

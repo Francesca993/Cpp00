@@ -6,7 +6,7 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 13:20:42 by francesca         #+#    #+#             */
-/*   Updated: 2025/10/26 13:53:42 by francesca        ###   ########.fr       */
+/*   Updated: 2025/10/26 15:27:32 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CONTACT_HPP
 
 # include <string>
+# include <iostream>
 
 class Contact {
     private:
@@ -29,7 +30,7 @@ class Contact {
 		~Contact();
         
     // Create contact
-	void	createContact();
+	  void	  addContact();
     bool    isValid();
     
     // Setters: permettono di impostare i campi da fuori in modo controllato

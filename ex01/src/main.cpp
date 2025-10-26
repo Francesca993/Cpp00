@@ -6,7 +6,7 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 14:30:53 by francesca         #+#    #+#             */
-/*   Updated: 2025/10/26 14:30:59 by francesca        ###   ########.fr       */
+/*   Updated: 2025/10/26 15:14:32 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 int main()
 {
     std::string     command;
+    PhoneBook PhoneBook;
 
     while (true)
     {
