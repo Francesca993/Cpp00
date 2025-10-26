@@ -6,7 +6,7 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 14:30:53 by francesca         #+#    #+#             */
-/*   Updated: 2025/10/26 14:11:10 by francesca        ###   ########.fr       */
+/*   Updated: 2025/10/26 14:30:59 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,37 @@
 
 int main()
 {
-    
+    std::string     command;
+
+    while (true)
+    {
+        std::cout << "Enter a command: ADD, SEARCH and EXIT" << std::endl;
+        // Taking input from cin stream(standard
+        // input stream) and storing it in command
+        if (!std::getline(std::cin, command)) 
+        {
+            // EOF/errore input: nessun comando possibile -> termina in silenzio
+            break;
+        }
+        // Convert command to uppercase
+		for (size_t i = 0; i < command.length(); ++i)
+			command[i] = std::toupper(command[i]);
+        if (command == "ADD")
+        {
+            std::cout << "tou push add" << std::endl;
+        }
+        else if (command == "SEARCH")
+        {
+            std::cout << "tou push SEARCH" << std::endl;    
+        }
+        else if (command == "EXIT")
+            break;
+        else
+        {
+            std::cout << "Invalid command. Use ADD, SEARCH or EXIT" << std::endl;
+        }
+            
+    }
+    return (0);
+            
 }
