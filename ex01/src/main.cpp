@@ -6,7 +6,7 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 14:30:53 by francesca         #+#    #+#             */
-/*   Updated: 2025/10/26 21:05:21 by francesca        ###   ########.fr       */
+/*   Updated: 2025/10/27 08:02:34 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main()
 			command[i] = std::toupper(command[i]);
         if (command == "ADD")
         {
-            PhoneBook.addContact();
+            PhoneBook.CheackAddContact();
         }
         else if (command == "SEARCH")
         {

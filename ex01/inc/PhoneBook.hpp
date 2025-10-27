@@ -6,7 +6,7 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 15:19:17 by francesca         #+#    #+#             */
-/*   Updated: 2025/10/26 21:32:49 by francesca        ###   ########.fr       */
+/*   Updated: 2025/10/27 08:02:14 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class PhoneBook
     PhoneBook();
         ~PhoneBook();
     
-    void addContact();
+    void CheackAddContact();
     int  displayCount() const;
     void printTable() const;
     void searchContact(int index) const;

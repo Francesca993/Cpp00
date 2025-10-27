@@ -6,7 +6,7 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 14:40:29 by francesca         #+#    #+#             */
-/*   Updated: 2025/10/26 21:36:39 by francesca        ###   ########.fr       */
+/*   Updated: 2025/10/27 08:20:15 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,21 @@ PhoneBook::~PhoneBook()
 {}
 
 // Add a contact on the PhoneBook
-void PhoneBook::addContact()
+void PhoneBook::CheackAddContact()
 {
-    if (this->contactsCount == 8)
-    {
-        std::cout << "The library is full. I'm replacing the oldest contact." << std::endl;
-        for (int i = 0; i <= 7; i++)
-        {
-            this->contacts[i] = this ->contacts[i +1];
-            contactsCount--;
-        }
+   if (contactsCount == 8) {
+        std::cout << "The library is full. I'm replacing the oldest contact.\n";
+        // Shift 0<-1, 1<-2, ..., 6<-7
+        for (int i = 0; i < 7; ++i)
+            contacts[i] = contacts[i + 1];
+
+        // Inserisci il nuovo in coda e termina
+        contacts[7].addContact();
+        return;                 // contactsCount resta 8
     }
-    this->contacts[this->contactsCount].addContact();
-	this->contactsCount++;
+    // Caso non pieno: append
+    contacts[contactsCount].addContact();
+    contactsCount++;
 }
 
 // Ritorna true se s è non-vuota E tutte cifre
@@ -147,7 +149,7 @@ void PhoneBook::printTable() const
     std::cout << std::string(10, '-') << "+"
               << std::string(10, '-') << "+"
               << std::string(10, '-') << "+"
-              << std::string(10, '-') << std::endl;
+              << std::string(10, '-') << "|" << std::endl;
 
     // Righe
     for (int i = 0; i < this->contactsCount; ++i) {
@@ -155,7 +157,7 @@ void PhoneBook::printTable() const
                   << std::setw(10) << i << "|"
                   << std::setw(10) << PhoneBook::formatColumn(this->contacts[i].getFirstName()) << "|"
                   << std::setw(10) << PhoneBook::formatColumn(this->contacts[i].getLastName())  << "|"
-                  << std::setw(10) << PhoneBook::formatColumn(this->contacts[i].getNickName())  << std::endl;
+                  << std::setw(10) << PhoneBook::formatColumn(this->contacts[i].getNickName())  << "|" << std::endl;
     }
     
 }
